@@ -23,4 +23,6 @@
 
 ### Running RN
 
-1. TBD
+1. `cd services/app`
+2. `pnpm install`
+3. `pnpm ios`
