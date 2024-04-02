@@ -5,7 +5,7 @@ export const getOneYearAheadDate = () => {
   return new Date(
     currentDate.getFullYear() + 1,
     currentDate.getMonth(),
-    currentDate.getDate()
+    currentDate.getDate(),
   );
 };
 export const user = pgTable("user", {
@@ -28,8 +28,6 @@ export const token = pgTable("token", {
   expires: timestamp("expires").$defaultFn(() => getOneYearAheadDate()),
 });
 
-export const user_to_user = pgTable("friend", {
+export const helloWorld = pgTable("helloWorld", {
   id: uuid("id").defaultRandom().primaryKey(),
-  userOneId: uuid("id").references(() => user.id),
-  userTwoId: uuid("id").references(() => user.id),
 });

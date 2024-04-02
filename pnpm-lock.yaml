@@ -12,6 +12,9 @@ importers:
 
   services/app:
     dependencies:
+      '@elysiajs/eden':
+        specifier: ^1.0.8
+        version: 1.0.8(elysia@1.0.11)
       '@expo/vector-icons':
         specifier: ^14.0.0
         version: 14.0.0
@@ -24,6 +27,18 @@ importers:
       '@react-navigation/native':
         specifier: ^6.1.7
         version: 6.1.17(react-native@0.73.6)(react@18.2.0)
+      '@tanstack/query-sync-storage-persister':
+        specifier: ^5.28.13
+        version: 5.28.13
+      '@tanstack/react-query':
+        specifier: ^5.28.14
+        version: 5.28.14(react@18.2.0)
+      '@tanstack/react-query-persist-client':
+        specifier: ^5.28.14
+        version: 5.28.14(@tanstack/react-query@5.28.14)(react@18.2.0)
+      elysia:
+        specifier: ^1.0.0y
+        version: 1.0.11(@sinclair/typebox@0.32.14)(typescript@5.3.3)
       expo:
         specifier: ~50.0.7
         version: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
@@ -107,8 +122,8 @@ importers:
   services/backend:
     dependencies:
       '@elysiajs/cors':
-        specifier: ^0.8.0
-        version: 0.8.0(elysia@0.8.17)
+        specifier: ^1.0.0
+        version: 1.0.2(elysia@1.0.11)
       '@fireside/db':
         specifier: '*'
         version: link:../db
@@ -122,8 +137,8 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(@sinclair/typebox@0.32.14)(drizzle-orm@0.29.3)
       elysia:
-        specifier: ^0.8.17
-        version: 0.8.17(@sinclair/typebox@0.32.14)(typescript@5.3.3)
+        specifier: ^1.0.0
+        version: 1.0.11(@sinclair/typebox@0.32.14)(typescript@5.3.3)
       typescript:
         specifier: ^5.0.0
         version: 5.3.3
@@ -1669,12 +1684,30 @@ packages:
       '@types/hammerjs': 2.0.45
     dev: false
 
-  /@elysiajs/cors@0.8.0(elysia@0.8.17):
-    resolution: {integrity: sha512-NADcOsokALRv4nljA5DYJPJdIJ7iwq+ouV5lH5W+hLgZRMYsfbKShg82QSmxd7BJQFuGSv2dIIF2dfG9ieUyng==}
+  /@elysiajs/cors@1.0.2(elysia@1.0.11):
+    resolution: {integrity: sha512-2X+wes5M2SdSaI4lGp0YBbTK35y9TtjjjFMjmQNjMonUXxtOrAR7cA0lsSIvHQ8UTd9z+mMBn7NyBhWaKxq0jA==}
     peerDependencies:
-      elysia: '>= 0.8.0'
+      elysia: '>= 1.0.2'
     dependencies:
-      elysia: 0.8.17(@sinclair/typebox@0.32.14)(typescript@5.3.3)
+      elysia: 1.0.11(@sinclair/typebox@0.32.14)(typescript@5.3.3)
+    dev: false
+
+  /@elysiajs/eden@1.0.8(elysia@1.0.11):
+    resolution: {integrity: sha512-kFnEscEuUONBYL9zkdwwswIGYpigELHF4OZM0KicX3HjmSilrS21pEwptSkiXwjcYhgft5ujp+WPyJ8adACAIA==}
+    peerDependencies:
+      elysia: '>= 1.0.2'
+    dependencies:
+      '@elysiajs/stream': 1.0.0-rc.0(elysia@1.0.11)
+      elysia: 1.0.11(@sinclair/typebox@0.32.14)(typescript@5.3.3)
+    dev: false
+
+  /@elysiajs/stream@1.0.0-rc.0(elysia@1.0.11):
+    resolution: {integrity: sha512-4VxHaDG/JngphW1j7eIIRxui+znZKugZG6999e2LlJUunj0co2Ud4WUAk6pks8izI3SO4EO/nyjhRp72GmS4lA==}
+    peerDependencies:
+      elysia: '>= 1.0.0-rc.0'
+    dependencies:
+      elysia: 1.0.11(@sinclair/typebox@0.32.14)(typescript@5.3.3)
+      nanoid: 5.0.6
     dev: false
 
   /@esbuild-kit/core-utils@3.3.2:
@@ -3264,6 +3297,43 @@ packages:
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
     dependencies:
       '@sinonjs/commons': 3.0.1
+    dev: false
+
+  /@tanstack/query-core@5.28.13:
+    resolution: {integrity: sha512-C3+CCOcza+mrZ7LglQbjeYEOTEC3LV0VN0eYaIN6GvqAZ8Foegdgch7n6QYPtT4FuLae5ALy+m+ZMEKpD6tMCQ==}
+    dev: false
+
+  /@tanstack/query-persist-client-core@5.28.13:
+    resolution: {integrity: sha512-Vwxf/UMY+/WIcGYvKWI3g0c/gSrnTH39G9oceuUIxfp5DUqS4OJ8v9VJmxMiGQl9oq7E8YCq0k8ndt0fL86Mrw==}
+    dependencies:
+      '@tanstack/query-core': 5.28.13
+    dev: false
+
+  /@tanstack/query-sync-storage-persister@5.28.13:
+    resolution: {integrity: sha512-7IRhhsvvvBTSqUwBviOz9Z4EN0VdT3YWBX/qs/gf2hU0wO4AWzmjKLIhqJMjzT15L/51mVO0Bf8h+n7mZXc9CA==}
+    dependencies:
+      '@tanstack/query-core': 5.28.13
+      '@tanstack/query-persist-client-core': 5.28.13
+    dev: false
+
+  /@tanstack/react-query-persist-client@5.28.14(@tanstack/react-query@5.28.14)(react@18.2.0):
+    resolution: {integrity: sha512-nwd3Hg1AeyZvyxeemPzwqtmUew58DBID2zyrf5eZii1D/lb9ICxwI37GI+x6IHjVtJP0D82ksgCSUPp7XmeY+w==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.28.14
+      react: ^18.0.0
+    dependencies:
+      '@tanstack/query-persist-client-core': 5.28.13
+      '@tanstack/react-query': 5.28.14(react@18.2.0)
+      react: 18.2.0
+    dev: false
+
+  /@tanstack/react-query@5.28.14(react@18.2.0):
+    resolution: {integrity: sha512-cZqt03Igb3I9tM72qNX5TAAmeYl75Z+k4Mv92VkXIXc2hCrv0fIywd7GN3JV1BBJl4mr7Cc+OOKKOPy8sNVOkA==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      '@tanstack/query-core': 5.28.13
+      react: 18.2.0
     dev: false
 
   /@types/bun@1.0.6:
@@ -4900,15 +4970,13 @@ packages:
   /electron-to-chromium@1.4.724:
     resolution: {integrity: sha512-RTRvkmRkGhNBPPpdrgtDKvmOEYTrPlXDfc0J/Nfq5s29tEahAwhiX4mmhNzj6febWMleulxVYPh7QwCSL/EldA==}
 
-  /elysia@0.8.17(@sinclair/typebox@0.32.14)(typescript@5.3.3):
-    resolution: {integrity: sha512-hqKHKUxbvlDHnobudtna5nBoGiZ4oa0xdnhynLAJF3+6gTYHAcQ/8/IyxUx5Az5Uy0zTuNiv7m2bIFu7xeMiWg==}
+  /elysia@1.0.11(@sinclair/typebox@0.32.14)(typescript@5.3.3):
+    resolution: {integrity: sha512-1MjXcvMmMP58dF8R+hvZ4yVepu3w/ZY+DX42Pp8z4jJwk4IGiNX8Fj1OETm3ehHyrFY27k6vi7mRZC/5vuTvvw==}
     peerDependencies:
       '@sinclair/typebox': '>= 0.31.0'
       openapi-types: '>= 12.0.0'
       typescript: '>= 5.0.0'
     peerDependenciesMeta:
-      '@sinclair/typebox':
-        optional: true
       openapi-types:
         optional: true
       typescript:
@@ -4919,7 +4987,6 @@ packages:
       eventemitter3: 5.0.1
       fast-decode-uri-component: 1.0.1
       fast-querystring: 1.1.2
-      memoirist: 0.1.10
       typescript: 5.3.3
     dev: false
 
@@ -7383,10 +7450,6 @@ packages:
     resolution: {integrity: sha512-c2YOUbp33+6thdCUi34xIyOU/a7bvGKj/3DB1iaPMTuPHf/Q2d5s4sn1FaCOO43XkXggnb08y5W2PU8UNYNLKQ==}
     dev: false
 
-  /memoirist@0.1.10:
-    resolution: {integrity: sha512-k2ARHDrSzqeQAWrgvE2NgNj7p5c1LkeFI1VizklJWDXAOTgq7m8mtl0v6W1mVawFNe3DH0hb4BdA91y3vwbqvw==}
-    dev: false
-
   /memoize-one@5.2.1:
     resolution: {integrity: sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==}
     dev: false
@@ -7808,6 +7871,12 @@ packages:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+
+  /nanoid@5.0.6:
+    resolution: {integrity: sha512-rRq0eMHoGZxlvaFOUdK1Ev83Bd1IgzzR+WJ3IbDJ7QOSdAxYjlurSPqFs9s4lJg29RT6nPwizFtJhQS6V5xgiA==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    dev: false
 
   /nativewind@4.0.36(@babel/core@7.24.3)(react-native-reanimated@3.6.3)(react-native-safe-area-context@4.9.0)(react-native@0.73.6)(react@18.2.0)(tailwindcss@3.4.3):
     resolution: {integrity: sha512-nd0Xgjzaq0ISvUAjibZXcuSvvpX1BGX2mfOGBPZpjGfHL3By6fwLGsNhrKU6mi2FF30c+kdok3e2I4k/O0UO1Q==}
