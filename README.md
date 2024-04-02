@@ -21,10 +21,6 @@
 3. `cd ../../`
 4. `docker-compose up fireside --build`
 
-### Running frontend
+### Running RN
 
-1. `cd frontend`
-2. `pnpm install`
-3. `echo "VITE_API_URL=http://localhost:8080" > .env`
-4. `pnpm run dev`
-5. Open http://localhost:5173/ in browser
+1. TBD
