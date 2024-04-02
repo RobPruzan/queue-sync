@@ -1,0 +1,26 @@
+{
+  "name": "@fireside/backend",
+  "module": "src/index.ts",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "build": "bun build --target=bun src/index.ts --outdir ./dist",
+    "start": "NODE_ENV=production bun src/index.ts",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^0.8.0",
+    "@fireside/db": "*",
+    "@fireside/utils": "*",
+    "@sinclair/typebox": "^0.32.14",
+    "drizzle-typebox": "^0.1.1",
+    "elysia": "^0.8.17"
+  }
+}

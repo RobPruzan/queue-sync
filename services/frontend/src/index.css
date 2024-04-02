@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 28 0% 95%;
+    --foreground: 28 0% 7%;
+    --card: 28 0% 90%;
+    --card-foreground: 28 0% 10%;
+    --popover: 28 0% 95%;
+    --popover-foreground: 28 95% 7%;
+    --primary: 28 85.4% 62.4%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 28 10% 70%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: -10 10% 85%;
+    --muted-foreground: 28 0% 35%;
+    --accent: -10 10% 80%;
+    --accent-foreground: 28 0% 10%;
+    --destructive: 0 50% 30%;
+    --destructive-foreground: 28 0% 90%;
+    --border: 28 20% 50%;
+    --input: 28 20% 18%;
+    --ring: 28 85.4% 62.4%;
+    --radius: 0.3rem;
+  }
+  .dark {
+    --background: 28 10% 7%;
+    --foreground: 28 0% 90%;
+    --card: 28 0% 7%;
+    --card-foreground: 28 0% 90%;
+    --popover: 28 10% 5%;
+    --popover-foreground: 28 0% 90%;
+    --primary: 28 85.4% 62.4%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 28 10% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: -10 10% 15%;
+    --muted-foreground: 28 0% 60%;
+    --accent: -10 10% 15%;
+    --accent-foreground: 28 0% 90%;
+    --destructive: 0 50% 30%;
+    --destructive-foreground: 28 0% 90%;
+    --border: 28 20% 18%;
+    --input: 28 20% 18%;
+    --ring: 28 85.4% 62.4%;
+    --radius: 0.3rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.min-h-calc {
+  min-height: calc(100vh - 64px);
+}
+
+.h-calc {
+  height: calc(100vh - 64px);
+}

@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["ES2021", "dom"],
+    "types": ["node"],
+    "module": "commonjs",
+    "rootDir": "./",
+    "moduleResolution": "node",
+    "declaration": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "noEmitHelpers": false,
+    "noEmitOnError": true,
+    "declarationDir": "./dist",
+    "preserveSymlinks": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "alwaysStrict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "noErrorTruncation": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist",]
+}
